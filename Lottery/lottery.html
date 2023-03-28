@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <h1>Lottery</h1>
+    <button onclick="consold()">Console</button>
+    <button onclick="htmld()">Html page</button>
+
+    <h4 class="text-danger" id="lottery"></h4>
+    <div class="container">
+      <button
+        type="button"
+        class="btn btn-info"
+        data-toggle="modal"
+        data-target="#myModal"
+        onclick="modelid()"
+      >
+        Model display
+      </button>
+      <div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title"><h1 id="model"></h1></h4>
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+            </div>
+            <div class="modal-body">
+              <h1 id="model"></h1>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script language="javascript" type="text/javascript">
+      var Arraylot = [
+        1234,
+        2345,
+        3456,
+        5678,
+        6789,
+        7890,
+        9876,
+        6543,
+        4556,
+        3543,
+      ]
+      result = random()
+      function random() {
+        winner = Arraylot[Math.floor(Math.random() * 10)]
+        return winner
+      }
+
+      function consold() {
+        console.log(result)
+      }
+      function htmld() {
+        document.getElementById('lottery').innerHTML = result
+      }
+      function modelid() {
+        document.getElementById('model').innerHTML = result
+      }
+    </script>
+  </body>
+</html>
